@@ -344,9 +344,15 @@ function sendBookingNotification(bookingData) {
     // Store booking locally
     storeBooking(bookingData);
     
-    // Send to WhatsApp (opens WhatsApp with pre-filled message)
-    const whatsappUrl = `https://wa.me/2347067385589?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    // Send to both WhatsApp numbers
+    const eventBookingUrl = `https://wa.me/2347067385589?text=${encodeURIComponent(message)}`;
+    const officeUrl = `https://wa.me/2348061964981?text=${encodeURIComponent(message)}`;
+    
+    // Open both WhatsApp chats
+    window.open(eventBookingUrl, '_blank');
+    setTimeout(() => {
+        window.open(officeUrl, '_blank');
+    }, 1000);
 }
 
 function sendContactNotification(contactData) {
@@ -354,8 +360,14 @@ function sendContactNotification(contactData) {
     
     storeContact(contactData);
     
-    const whatsappUrl = `https://wa.me/2347067385589?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    // Send to both WhatsApp numbers
+    const eventBookingUrl = `https://wa.me/2347067385589?text=${encodeURIComponent(message)}`;
+    const officeUrl = `https://wa.me/2348061964981?text=${encodeURIComponent(message)}`;
+    
+    window.open(eventBookingUrl, '_blank');
+    setTimeout(() => {
+        window.open(officeUrl, '_blank');
+    }, 1000);
 }
 
 // Local storage for bookings
