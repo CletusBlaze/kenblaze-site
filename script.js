@@ -249,35 +249,37 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
         const img = item.querySelector('img');
         const lightbox = document.createElement('div');
-        lightbox.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            cursor: pointer;
+        lightbox.className = 'lightbox-overlay';
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <span class="lightbox-close">&times;</span>
+                <img src="${img.src}" alt="${img.alt}" class="lightbox-image">
+                <div class="lightbox-caption">Click outside or press ESC to close</div>
+            </div>
         `;
         
-        const lightboxImg = document.createElement('img');
-        lightboxImg.src = img.src;
-        lightboxImg.style.cssText = `
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        `;
-        
-        lightbox.appendChild(lightboxImg);
         document.body.appendChild(lightbox);
+        document.body.style.overflow = 'hidden';
         
-        lightbox.addEventListener('click', () => {
-            document.body.removeChild(lightbox);
+        // Close lightbox events
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
         });
+        
+        // ESC key to close
+        document.addEventListener('keydown', handleEscKey);
+        
+        function closeLightbox() {
+            document.body.removeChild(lightbox);
+            document.body.style.overflow = 'auto';
+            document.removeEventListener('keydown', handleEscKey);
+        }
+        
+        function handleEscKey(e) {
+            if (e.key === 'Escape') closeLightbox();
+        }
     });
 });
 
@@ -389,6 +391,16 @@ function storeContact(data) {
         id: Date.now()
     });
     localStorage.setItem('kenblaze_contacts', JSON.stringify(contacts));
+}
+
+// Gallery horizontal scrolling
+function scrollGallery(direction) {
+    const gallery = document.getElementById('galleryScroll');
+    const scrollAmount = 320;
+    gallery.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
 }
 
 // Update fade-in elements to include new sections

@@ -108,72 +108,71 @@
             <div class="container">
                 <h2>Photo Gallery</h2>
                 <p class="gallery-subtitle">A collection of my favorite captures</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="pics/1.jpg" alt="Kenblaze Photography Work">
+                <div class="gallery-container">
+                    <button class="gallery-nav prev" onclick="scrollGallery(-1)">❮</button>
+                    <div class="gallery-scroll" id="galleryScroll">
+                        <div class="gallery-item">
+                            <img src="pics/1.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/2.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/3.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/4.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/5.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/6.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/7.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/8.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/9.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/10.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/12.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/13.jpg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.1.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.12.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.3.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.4.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.5.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.6.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.7.jpeg" alt="Kenblaze Photography Work">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="pics/Image.8.jpeg" alt="Kenblaze Photography Work">
+                        </div>
                     </div>
-                    <div class="gallery-item">
-                        <img src="pics/2.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/3.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/4.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/5.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/6.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/7.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/8.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/9.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/10.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/12.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/13.jpg" alt="Kenblaze Photography Work">
-                    </div>
-                     <div class="gallery-item">
-                        <img src="pics/Image.1.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/Image.12.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/Image.3.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/Image.4.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/Image.5.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/Image.6.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="pics/Image.7.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-                   <div class="gallery-item">
-                        <img src="pics/Image.8.jpeg" alt="Kenblaze Photography Work">
-                    </div>
-
-
-
-
-
+                    <button class="gallery-nav next" onclick="scrollGallery(1)">❯</button>
                 </div>
             </div>
         </section>
@@ -333,7 +332,6 @@
                     <a href="#portfolio">Portfolio</a>
                     <a href="booking.html">Booking</a>
                     <a href="contact.html">Contact</a>
-                    <a href="login.html" style="color: #95a5a6; font-size: 0.8rem;">Admin</a>
                 </div>
                 <div class="footer-social">
                     <a href="https://www.instagram.com/kenblazeweddings" target="_blank" class="social-icon instagram">
